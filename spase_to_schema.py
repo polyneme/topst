@@ -123,6 +123,11 @@ def container_element_to_python_code(row: pd.Series) -> str:
     """
     if row["spase_type"] == "Sequence":
         return ""
+    
+    if row["python_type"] is np.nan:
+        element = '"' + row["element"] + '"' #TODO: If python is updated, use f-strings
+        return f'{row["element"]} : {row["occurrence"].replace(".", element)}'
+    
     return f'{row["element"]} : {row["occurrence"].replace(".",  row["python_type"])}'
 
 
@@ -178,9 +183,9 @@ def get_container_elements_code_from_json(
     container_elements["python_type"] = container_elements["spase_type"].map(
         spase_to_terminus_types
     )
-    container_elements["python_type"] = container_elements["python_type"].fillna(
-        container_elements["element"]
-    )
+    # container_elements["python_type"] = container_elements["python_type"].fillna(
+    #     container_elements["element"]
+    # )
 
     container_elements["occurrence"] = container_elements["occurrence"].map(
         occurrence_map
@@ -271,7 +276,7 @@ def python_code_for_class(row: pd.Series) -> str:
     # add description:
     script += f'\n\t"""{row["definition"]}"""'
     # add schema:
-    script += "\n\tschema_=schema\n"
+    script += "\n\t_schema=schema\n"
     script += "\n\t"
     # add the element code:
     script += row["python_elements_code"]
@@ -318,8 +323,8 @@ def save_code_file(code: str, file_name: str) -> None:
     assert file_name.endswith(".py"), "File name must end with .py"
     with open(file_name, "w") as f:
         f.write(code)
-    
 
 if __name__ == "__main__":
     code = generate_python_schema_code(get_json())
-    save_code_file(code, "schema.py")
+    save_code_file(code, "terminus_schema/schema.py")
+    print("Schema file saved to /terminus_schema/schema.py")
