@@ -270,6 +270,8 @@ def python_code_for_class(row: pd.Series) -> str:
     script = f'class {row.name}({row["class_type"]}):'
     # add description:
     script += f'\n\t"""{row["definition"]}"""'
+    # add schema:
+    script += "\n\tschema_=schema\n"
     script += "\n\t"
     # add the element code:
     script += row["python_elements_code"]
@@ -317,3 +319,7 @@ def save_code_file(code: str, file_name: str) -> None:
     with open(file_name, "w") as f:
         f.write(code)
     
+
+if __name__ == "__main__":
+    code = generate_python_schema_code(get_json())
+    save_code_file(code, "schema.py")
