@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "topst"
+version = "0.1.0"
+description = "Converts spase json schema to terminus db schema"
+authors = ["Unnati Patel, Donny Winston"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+terminusdb-client = "^10.2.6"
+numpy = "^1.26.2"
+requests = "^2.31.0"
+pandas = "^2.1.4"
+DateTime = "^5.4"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
