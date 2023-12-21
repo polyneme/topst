@@ -123,11 +123,13 @@ def container_element_to_python_code(row: pd.Series) -> str:
     """
     if row["spase_type"] == "Sequence":
         return ""
-    
+
     if row["python_type"] is np.nan:
-        element = '"' + row["element"] + '"' #TODO: If python is updated, use f-strings
+        element = (
+            '"' + row["element"] + '"'
+        )  # TODO: If python is updated, use f-strings
         return f'{row["element"]} : {row["occurrence"].replace(".", element)}'
-    
+
     return f'{row["element"]} : {row["occurrence"].replace(".",  row["python_type"])}'
 
 
@@ -282,7 +284,8 @@ def python_code_for_class(row: pd.Series) -> str:
     script += row["python_elements_code"]
     return script
 
-#TODO: Return Intial Python Code from a function
+
+# TODO: Return Intial Python Code from a function
 def generate_python_schema_code(
     all_available_data: pd.DataFrame,
 ) -> str:
@@ -299,7 +302,7 @@ def generate_python_schema_code(
         The python code for the schema.
     """
 
-    python_script = '\nfrom typing import  Set, Optional, List\nimport datetime as dt\nfrom terminusdb_client import Client\nfrom terminusdb_client.woqlschema.woql_schema import (DocumentTemplate,EnumTemplate,WOQLSchema,LexicalKey,\n)\nimport pandas as pd\nfrom tqdm import tqdm\nimport tempfile\nimport random\nschema = WOQLSchema()\n'
+    python_script = "\nfrom typing import  Set, Optional, List\nimport datetime as dt\nfrom terminusdb_client import Client\nfrom terminusdb_client.woqlschema.woql_schema import (DocumentTemplate,EnumTemplate,WOQLSchema,LexicalKey,\n)\nimport pandas as pd\nfrom tqdm import tqdm\nimport tempfile\nimport random\nschema = WOQLSchema()\n"
 
     container_def, all_available_data = get_all_available_data_types(get_json())
     code_class = get_python_code_utils(container_def, all_available_data)
@@ -308,6 +311,7 @@ def generate_python_schema_code(
     # combine python code for each container:
     python_script += "\n\n".join(code_list)
     return python_script
+
 
 def save_code_file(code: str, file_name: str) -> None:
     """
@@ -323,6 +327,7 @@ def save_code_file(code: str, file_name: str) -> None:
     assert file_name.endswith(".py"), "File name must end with .py"
     with open(file_name, "w") as f:
         f.write(code)
+
 
 if __name__ == "__main__":
     code = generate_python_schema_code(get_json())
