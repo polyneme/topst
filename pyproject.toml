@@ -12,6 +12,7 @@ numpy = "^1.26.2"
 requests = "^2.31.0"
 pandas = "^2.1.4"
 DateTime = "^5.4"
+jsonschema = "^4.21.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.12.0"
