@@ -15,9 +15,8 @@ spase_to_terminus_json_types = {
     "Count": "xsd:integer",
     "ID": "xsd:string",
     "Item": "xsd:string",
-    #TODO: check if this is correct with Donny
-    "Sequence": "xsd:string"
-   
+    # TODO: check if this is correct with Donny
+    "Sequence": "xsd:string",
 }
 occurrence_map = {
     "0": "Optional",
@@ -27,6 +26,7 @@ occurrence_map = {
     # TODO: check if this is correct with Donny
     "r": "Optional",
 }
+
 
 def get_sub_dictonary(dictionary: dict, keys: List[str]) -> dict:
     """
@@ -45,6 +45,7 @@ def get_sub_dictonary(dictionary: dict, keys: List[str]) -> dict:
         The sub dictionary.
     """
     return {key: dictionary[key] for key in keys}
+
 
 def get_spase_model(url: Optional[str] = None) -> dict:
     """
@@ -68,71 +69,87 @@ def get_spase_model(url: Optional[str] = None) -> dict:
     spase_model = response.json()
     return spase_model
 
+
 def get_all_documentation(data_dictonary: pd.DataFrame) -> Dict:
     """
     Get all the documentation & types from the spase model for each item.
 
     """
-    data_dictonary["@class"] = data_dictonary['type'].map(spase_to_terminus_json_types)
+    data_dictonary["@class"] = data_dictonary["type"].map(spase_to_terminus_json_types)
     # where null replace with primary key:
     data_dictonary["@class"].fillna(data_dictonary.index.to_series(), inplace=True)
-  
-    return data_dictonary['definition'].to_dict(), data_dictonary[['@class']].to_dict('index')
+
+    return data_dictonary["definition"].to_dict(), data_dictonary[["@class"]].to_dict(
+        "index"
+    )
 
 
 def get_class_schema(container, data_documentation, data_type_defination, spase_model):
     """
-    Get the schema for a class.   
+    Get the schema for a class.
     """
 
     class_schema = {
-       "@type": "Class",
-       "@id": container.name,
-          "@documentation" : {
-          "@comment" : container["definition"],
-          "@properties":  get_sub_dictonary(data_documentation, container['subElements']),
-          },
-   }
+        "@type": "Class",
+        "@id": container.name,
+        "@documentation": {
+            "@comment": container["definition"],
+            "@properties": get_sub_dictonary(
+                data_documentation, container["subElements"]
+            ),
+        },
+    }
     # dict of dict: "index": {"@class": class_}
-    subclasses_type  = get_sub_dictonary(data_type_defination, container['subElements'])
+    subclasses_type = get_sub_dictonary(data_type_defination, container["subElements"])
     ## Get occurance from ontology here:
-    #spase_model['ontology'][container.name]
-    for key in spase_model['ontology'][container.name]:
-        occurrence = spase_model['ontology'][container.name][key]['occurrence']
+    # spase_model['ontology'][container.name]
+    for key in spase_model["ontology"][container.name]:
+        occurrence = spase_model["ontology"][container.name][key]["occurrence"]
         if occurrence_map.get(occurrence):
             subclasses_type[key]["@type"] = occurrence_map[occurrence]
         else:
-            #TODO: change this
-            subclasses_type[key] = subclasses_type[key]['@class']
+            # TODO: change this
+            subclasses_type[key] = subclasses_type[key]["@class"]
 
     class_schema = class_schema | subclasses_type
     return class_schema
 
-def get_all_enums_schema(enums:pd.DataFrame)-> List[dict]:
+
+def get_all_enums_schema(enums: pd.DataFrame) -> List[dict]:
     enums.loc[:, "@type"] = "Enum"
     enums.reset_index(inplace=True)
     enums.rename(columns={"index": "@id", "allowedValues": "@value"}, inplace=True)
-    enums_list = enums[['@type', "@id", "@value"]].to_dict('records')
+    enums_list = enums[["@type", "@id", "@value"]].to_dict("records")
     return enums_list
 
-def get_all_classes_schema(containers:pd.DataFrame, data_documentation, data_class_types, spase_model):
-    containers['schema'] = containers.apply(lambda x: get_class_schema(x, data_documentation, data_class_types, spase_model), axis=1)
-    return containers['schema'].to_list()
 
-def save_json(json_file_name: str, json_file_data: List[Dict])-> Path:
+def get_all_classes_schema(
+    containers: pd.DataFrame, data_documentation, data_class_types, spase_model
+):
+    containers["schema"] = containers.apply(
+        lambda x: get_class_schema(
+            x, data_documentation, data_class_types, spase_model
+        ),
+        axis=1,
+    )
+    return containers["schema"].to_list()
+
+
+def save_json(json_file_name: str, json_file_data: List[Dict]) -> Path:
     with open(json_file_name, "w") as f:
         json.dump(json_file_data, f, indent=4)
     return Path(json_file_name)
-    
+
 
 def get_context() -> Dict:
-    #TODO: Update the context from fetched schema
-    context={
-            "@type": "@context",
-            "@base": "https://spase-group.org/data/",
-            "@schema": "http://www.spase-group.org/data/schema",
-        }
+    # TODO: Update the context from fetched schema
+    context = {
+        "@type": "@context",
+        "@base": "https://spase-group.org/data/",
+        "@schema": "http://www.spase-group.org/data/schema",
+    }
     return context
+
 
 def create_and_save_json():
     """
@@ -140,7 +157,6 @@ def create_and_save_json():
     """
     spase_model = get_spase_model()
     data_dictonary = pd.DataFrame.from_dict(spase_model["dictionary"], orient="index")
-
 
     enums = data_dictonary[data_dictonary["type"] == "Enumeration"]
     enums_schema = get_all_enums_schema(enums)
@@ -154,9 +170,9 @@ def create_and_save_json():
     )
     # merge the above two lists and save:
     context = get_context()
-    schema_json = [context, *enums_schema,*containers_schema]
+    schema_json = [context, *enums_schema, *containers_schema]
     file_name = "/home/helio/terminus-db-schema/topst-ssh/schema.json"
     path = save_json(file_name, schema_json)
     assert path.exists()
-    #return file path:
+    # return file path:
     return path
