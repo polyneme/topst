@@ -32,7 +32,7 @@ def handle_type(value):
             "type": "string",
             "format": "duration"
         },
-        "xsd:integer": "integer",
+        "xsd:integer":  {"type": "integer"},
     }
     if isinstance(value, dict):
         return {"type": "string", "enum": value["@values"]}
@@ -187,17 +187,18 @@ if __name__ == "__main__":
 
 
     # get displaydata_schema:
-    frame_type = "DisplayData"
+    frame_type = "Model"
     DisplayData_frame = client.get_class_frame(frame_type)
     json_schema = convert_frame_to_schema(DisplayData_frame)
 
     example_urls = [
         "https://hpde.io/ASWS/DisplayData/Solar_Image/Clg_Solar_Image.json",
         "https://hpde.io/ASWS/DisplayData/Imaging_Riometer/Dav_Imaging_Riometer.json",
+        "https://hpde.io/CCMC/Model/IRI-2016.json",
     ]
 
     # get data:
-    example_display_data = requests.get(example_urls[0]).json()["Spase"]["DisplayData"]
+    example_display_data = requests.get(example_urls[2]).json()["Spase"][frame_type]
 
 
 
@@ -211,7 +212,7 @@ if __name__ == "__main__":
         fixed_data, data_manipulated = fix_errors_rule(errors, fixed_data)
 
     assert len(errors) == 0, f"Errors: {errors}"
-    data_to_insert = recursive_dict(fixed_data, "DisplayData")
+    data_to_insert = recursive_dict(fixed_data, frame_type)
 
     # save the above data:
     data_inserted = client.insert_document(data_to_insert)
