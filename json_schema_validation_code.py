@@ -22,7 +22,7 @@ def is_duration(duration_string):
     return {"type": "string"}
 
 
-def handle_type(value)->Dict:
+def handle_type(value)->dict:
     """
     Handle the type of the value and return the json schema type.
     Parameters
