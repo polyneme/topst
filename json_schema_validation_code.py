@@ -53,7 +53,7 @@ def handle_type(value)->dict:
     return {"$ref": f"#/definations/{value}"}
 
 
-def convert_frame_to_schema(frame, definations={}, return_definations=True):
+def convert_frame_to_schema(frame, client, definations={}, return_definations=True):
     """
     Convert a frame into a schema.
 
@@ -82,7 +82,7 @@ def convert_frame_to_schema(frame, definations={}, return_definations=True):
             if definations.get(element) is None:
                 # get the frame for the element:
                 element_frame = client.get_class_frame(element)
-                element_defination = convert_frame_to_schema(element_frame, definations)
+                element_defination = convert_frame_to_schema(element_frame, client,definations)
                 # add the definations in the above to definatons
                 if element_defination.get("definations"):
                     definations.update(element_defination["definations"])
