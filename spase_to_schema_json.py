@@ -2,8 +2,10 @@ import json
 import requests
 from typing import List, Dict, Tuple, Union, Optional, Any
 import pandas as pd
-import numpy as np
 from pathlib import Path
+import os
+from terminusdb_client import WOQLClient, GraphType
+
 
 
 spase_to_terminus_json_types = {
@@ -101,8 +103,7 @@ def get_class_schema(container, data_documentation, data_type_defination, spase_
     }
     # dict of dict: "index": {"@class": class_}
     subclasses_type = get_sub_dictonary(data_type_defination, container["subElements"])
-    ## Get occurance from ontology here:
-    # spase_model['ontology'][container.name]
+   
     for key in spase_model["ontology"][container.name]:
         occurrence = spase_model["ontology"][container.name][key]["occurrence"]
         if occurrence_map.get(occurrence):
@@ -116,6 +117,9 @@ def get_class_schema(container, data_documentation, data_type_defination, spase_
 
 
 def get_all_enums_schema(enums: pd.DataFrame) -> List[dict]:
+    """
+    Get the schema for all the enums.
+    """
     enums.loc[:, "@type"] = "Enum"
     enums.reset_index(inplace=True)
     enums.rename(columns={"index": "@id", "allowedValues": "@value"}, inplace=True)
@@ -126,6 +130,9 @@ def get_all_enums_schema(enums: pd.DataFrame) -> List[dict]:
 def get_all_classes_schema(
     containers: pd.DataFrame, data_documentation, data_class_types, spase_model
 ):
+    """
+    Get the schema for all the classes.
+    """
     containers["schema"] = containers.apply(
         lambda x: get_class_schema(
             x, data_documentation, data_class_types, spase_model
@@ -151,9 +158,9 @@ def get_context() -> Dict:
     return context
 
 
-def create_and_save_json():
+def create_terminus_db_schema_json():
     """
-    Create the json file  and save the json file for the schema.
+    Create schema json for teminus db.
     """
     spase_model = get_spase_model()
     data_dictonary = pd.DataFrame.from_dict(spase_model["dictionary"], orient="index")
@@ -171,8 +178,54 @@ def create_and_save_json():
     # merge the above two lists and save:
     context = get_context()
     schema_json = [context, *enums_schema, *containers_schema]
-    file_name = "/home/helio/terminus-db-schema/topst-ssh/schema.json"
-    path = save_json(file_name, schema_json)
-    assert path.exists()
-    # return file path:
+
+    return schema_json
+    
+
+
+def create_and_save_json(file_path: str = None) -> Path:
+    """
+    Create the json file  and save the json file for the schema.
+    """
+    if file_path is None:
+        file_path = os.getenv("TERMINUS_SCHEMA_FILE_PATH")
+    
+    assert file_path is not None, "Please provide the file path for the schema json file either through enviroment variable or argument."
+
+    schema_json = create_terminus_db_schema_json()
+    path = save_json(file_path, schema_json)
+    assert path.exists(), "The file path does not exist."
     return path
+
+def read_json_file(file_path):
+    """
+    Read the json file and returns the json file.
+    """
+    with open(file_path, "r") as f:
+        schema_json = json.load(f)
+    return schema_json
+
+
+def create_terminus_db_from_schema(schema, dbid, team="admin", host="127.0.0.1", port="6363", on_exists_delete=False):
+    """
+    Create the terminus database with the schema and returns the connection to the database as well as classes created.
+    """
+    uri = f"http://{host}:{port}"
+    client = WOQLClient(uri)
+    client.connect(team=team)
+    exists = client.has_database(dbid)
+    if exists:
+        print(f"Database {dbid} already exists!")
+        if on_exists_delete:
+            print("Delete the database first!")
+            client.delete_database(dbid, force=True)
+        else:
+           print("Use on_exists_delete=True to delete the database!")
+           return
+        
+    client.create_database(dbid, team=team)
+    
+    results = client.insert_document(
+        schema, graph_type=GraphType.SCHEMA, full_replace=True
+    )
+    return client, results
