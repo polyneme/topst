@@ -22,7 +22,18 @@ def is_duration(duration_string):
     return {"type": "string"}
 
 
-def handle_type(value):
+def handle_type(value)->Dict:
+    """
+    Handle the type of the value and return the json schema type.
+    Parameters
+    ----------
+    value : The type of the element specified in spase.
+
+    Returns
+    -------
+    Dict
+        The json schema type.
+    """
     spase_to_json_schema_types = {
         "xsd:string": {"type": "string"},
         "xsd:dateTime": {"type": "string", "format": "date-time"},
