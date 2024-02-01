@@ -3,4 +3,4 @@ test.ipynb
 .vscode/
 __pycache__/
 .env
-.json
+*.json
