@@ -7,7 +7,6 @@ import os
 from terminusdb_client import WOQLClient, GraphType
 
 
-
 spase_to_terminus_json_types = {
     "Text": "xsd:string",
     "URL": "xsd:string",
@@ -103,7 +102,7 @@ def get_class_schema(container, data_documentation, data_type_defination, spase_
     }
     # dict of dict: "index": {"@class": class_}
     subclasses_type = get_sub_dictonary(data_type_defination, container["subElements"])
-   
+
     for key in spase_model["ontology"][container.name]:
         occurrence = spase_model["ontology"][container.name][key]["occurrence"]
         if occurrence_map.get(occurrence):
@@ -180,7 +179,6 @@ def create_terminus_db_schema_json():
     schema_json = [context, *enums_schema, *containers_schema]
 
     return schema_json
-    
 
 
 def create_and_save_json(file_path: str = None) -> Path:
@@ -189,13 +187,16 @@ def create_and_save_json(file_path: str = None) -> Path:
     """
     if file_path is None:
         file_path = os.getenv("TERMINUS_SCHEMA_FILE_PATH")
-    
-    assert file_path is not None, "Please provide the file path for the schema json file either through enviroment variable or argument."
+
+    assert (
+        file_path is not None
+    ), "Please provide the file path for the schema json file either through enviroment variable or argument."
 
     schema_json = create_terminus_db_schema_json()
     path = save_json(file_path, schema_json)
     assert path.exists(), "The file path does not exist."
     return path
+
 
 def read_json_file(file_path):
     """
@@ -206,7 +207,9 @@ def read_json_file(file_path):
     return schema_json
 
 
-def create_terminus_db_from_schema(schema, dbid, team="admin", host="127.0.0.1", port="6363", on_exists_delete=False):
+def create_terminus_db_from_schema(
+    schema, dbid, team="admin", host="127.0.0.1", port="6363", on_exists_delete=False
+):
     """
     Create the terminus database with the schema and returns the connection to the database as well as classes created.
     """
@@ -220,11 +223,11 @@ def create_terminus_db_from_schema(schema, dbid, team="admin", host="127.0.0.1",
             print("Delete the database first!")
             client.delete_database(dbid, force=True)
         else:
-           print("Use on_exists_delete=True to delete the database!")
-           return
-        
+            print("Use on_exists_delete=True to delete the database!")
+            return
+
     client.create_database(dbid, team=team)
-    
+
     results = client.insert_document(
         schema, graph_type=GraphType.SCHEMA, full_replace=True
     )

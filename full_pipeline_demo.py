@@ -22,7 +22,8 @@ import dotenv
 import requests
 import pandas as pd
 
-#TODO: below is an example, but allow user defined if-else rules to fix data
+
+# TODO: below is an example, but allow user defined if-else rules to fix data
 def fix_errors_rule(errors, data):
     data_manipulated = 0
     for error in errors:
@@ -43,7 +44,7 @@ def fix_errors_rule(errors, data):
             assert new_instance == getFromDict(data, list(error.path))
             assert new_instance.get("StopDate") is not None
             data_manipulated = 1
-        
+
         if error.validator == "format" and error.validator_value == "date-time":
             new_instance = error.instance + "Z"
             setFromDict(data, list(error.path), new_instance)
@@ -56,6 +57,7 @@ def fix_errors_rule(errors, data):
             data_manipulated = 1
 
     return data, data_manipulated
+
 
 # TODO: change below function by extending the validation class for specifically terminusdb & add rules based insertion
 def recursive_dict(current_element, parent_key):
@@ -78,11 +80,6 @@ def recursive_dict(current_element, parent_key):
 
     new_dictonary["@type"] = parent_key
     return new_dictonary
-
-
-
-
-
 
 
 def example_detect_errors():
@@ -160,10 +157,9 @@ def example_insert_data():
     host = os.getenv("HOST")
     port = os.getenv("PORT")
 
-    uri =f"http://{host}:{port}"
+    uri = f"http://{host}:{port}"
     client = WOQLClient(uri)
     client.connect(team=team, db=dbid)
-
 
     # get displaydata_schema:
     frame_type = "DisplayData"
@@ -204,6 +200,3 @@ if __name__ == "__main__":
     errors_df = example_detect_errors()
     print(errors_df)
     example_insert_data()
-
-    # errors_df.to_csv("errors.csv", index=False)
-    # print("Errors saved to errors.csv")

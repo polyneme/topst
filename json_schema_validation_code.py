@@ -11,6 +11,7 @@ import isodate
 import os
 import dotenv
 
+
 def is_duration(duration_string):
     """
     Parse a ISO 8601 duration string into a datetime.timedelta object.
@@ -22,7 +23,7 @@ def is_duration(duration_string):
     return {"type": "string"}
 
 
-def handle_type(value)->dict:
+def handle_type(value) -> dict:
     """
     Handle the type of the value and return the json schema type.
     Parameters
@@ -39,11 +40,11 @@ def handle_type(value)->dict:
         "xsd:dateTime": {"type": "string", "format": "date-time"},
         "xsd:float": {"type": "number"},
         "xsd:duration": {
-            #TODO: This isn't currently defined in format checker, implement
+            # TODO: This isn't currently defined in format checker, implement
             "type": "string",
-            "format": "duration"
+            "format": "duration",
         },
-        "xsd:integer":  {"type": "integer"},
+        "xsd:integer": {"type": "integer"},
     }
     if isinstance(value, dict):
         return {"type": "string", "enum": value["@values"]}
@@ -61,7 +62,7 @@ def convert_frame_to_schema(frame, client, definations={}, return_definations=Tr
     """
     elements = frame["@documentation"]["@properties"]
 
-    required = []  
+    required = []
     arrays = []
     properties = {}
 
@@ -82,7 +83,9 @@ def convert_frame_to_schema(frame, client, definations={}, return_definations=Tr
             if definations.get(element) is None:
                 # get the frame for the element:
                 element_frame = client.get_class_frame(element)
-                element_defination = convert_frame_to_schema(element_frame, client,definations)
+                element_defination = convert_frame_to_schema(
+                    element_frame, client, definations
+                )
                 # add the definations in the above to definatons
                 if element_defination.get("definations"):
                     definations.update(element_defination["definations"])
@@ -103,10 +106,10 @@ def convert_frame_to_schema(frame, client, definations={}, return_definations=Tr
     }
 
 
-
-
 def get_all_errors_for_spase(json_schema, data):
-    validator = jsonschema.Draft7Validator(json_schema, format_checker=jsonschema.Draft201909Validator.FORMAT_CHECKER)
+    validator = jsonschema.Draft7Validator(
+        json_schema, format_checker=jsonschema.Draft201909Validator.FORMAT_CHECKER
+    )
     errors = validator.iter_errors(data)
     return errors
 
