@@ -1,4 +1,8 @@
+## Usability Sessions Round 1 (2024-02-19 through 2024-02-23)
+
 Seeking usability feedback on pre-alpha [^1] heliophysics-focused lesson materials to advance open-science literacy and capacity-building.
+
+When: 30-minute sessions during the week of Mon Feb 19 through Fri Feb 23.
 
 Target audience: those who do research relevant to NASA's five Science Mission Directorate (SMD) divisions -- Earth Science, Planetary Science, Heliophysics, Astrophysics, and Biological and Physical Sciences -- from undergraduate students through established scientists and managers.
 
@@ -17,6 +21,11 @@ Logistics:
   - at least three (3) slots that could work for you (you may indicate preferences)
   - your career stage / role (can choose more than one): student, researcher, manager
   - your country of residence; if in USA, also your state/territory of residence.
+ 
+More information:
+
+- Funding: [F.14 Transform to Open Science Training (NNH22ZDA001N-TOPST)](https://nspires.nasaprs.com/external/solicitations/summary.do?solId=%7BAB776446-03A8-4C24-845D-2E5A2ADA2D5A%7D&path=&method=init).
+- Proposal: [Heliophysics ScienceCore curriculum development with emphasis on knowledge representation techniques to increase usability of NASA cloud-based datasets](https://doi.org/10.5281/zenodo.8403289).
 
 [^1]: <https://en.wikipedia.org/wiki/Software_release_life_cycle>
 [^2]: <https://openscience101.org/>
