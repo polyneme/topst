@@ -6,3 +6,9 @@ News release: <https://www.nasa.gov/centers/marshall/news/releases/2023/nasa-boo
 Redacted proposal: <https://doi.org/10.5281/zenodo.8403289>
 
 [Domain vision statement](docs/domain-vision-statement.md)
+
+# Experiments
+
+SPASE RDF Tools:
+- repo: <https://github.com/polyneme/topst-spase-rdf-tools>
+- demo: <https://files.polyneme.xyz/SPASE-RDF-Exploration-1713278559.html> (notebook in repo above)
