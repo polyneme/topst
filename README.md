@@ -9,6 +9,6 @@ Redacted proposal: <https://doi.org/10.5281/zenodo.8403289>
 
 ## Experiments
 
-SPASE RDF Tools:
+[SPASE](https://spase-group.org/) RDF Tools:
 - repo: <https://github.com/polyneme/topst-spase-rdf-tools>
 - demo: <https://files.polyneme.xyz/SPASE-RDF-Exploration-1713278559.html> (notebook in repo above)
