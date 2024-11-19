@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.3/metadata.xsd">
+  <identifier identifierType="DOI">10.5442/NI000001</identifier>
+  <creators>
+    <creator>
+      <creatorName nameType="Organizational">Helmholtz-Zentrum Berlin für Materialien und Energie</creatorName>
+      <nameIdentifier nameIdentifierScheme="ROR" schemeURI="https://ror.org/">02aj13c28</nameIdentifier>
+    </creator>
+  </creators>
+  <titles>
+    <title titleType="Other">E2 - Flat-Cone Diffractometer</title>
+  </titles>
+  <publisher>Helmholtz-Zentrum Berlin für Materialien und Energie</publisher>
+  <publicationYear>2019</publicationYear>
+  <subjects>
+    <subject>BER II</subject>
+    <subject>Diffraction</subject>
+    <subject>Neutron source</subject>
+    <subject schemeURI="http://purl.org/pan-science/PaNET/" subjectScheme="The Photon and Neutron Experimental Techniques Ontology" valueURI="http://purl.org/pan-science/PaNET/PaNET01217">neutron diffraction</subject>
+  </subjects>
+  <contributors>
+    <contributor contributorType="HostingInstitution">
+      <contributorName nameType="Organizational">Helmholtz-Zentrum Berlin für Materialien und Energie</contributorName>
+      <nameIdentifier nameIdentifierScheme="ROR" schemeURI="https://ror.org/">02aj13c28</nameIdentifier>
+    </contributor>
+  </contributors>
+  <dates>
+    <date dateType="Available">2007-01-01/2019-12-31</date>
+  </dates>
+  <resourceType resourceTypeGeneral="Instrument">BER II Beamline</resourceType>
+  <relatedIdentifiers>
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsDescribedBy">10.17815/jlsrf-4-110</relatedIdentifier>
+  </relatedIdentifiers>
+  <descriptions>
+    <description xml:lang="en" descriptionType="Abstract">
+      A 3-dimensional part of the reciprocal space can be scanned in less then five steps by combining the “off-plane Bragg-scattering” and the flat-cone layer concept while using a new computer-controlled tilting axis of the detector bank. Parasitic scattering from cryostat or furnace walls is reduced by an oscillating "radial" collimator. The datasets and all connected information is stored in one independent NeXus file format for each measurement and can be easily archived. The software package TVneXus deals with the raw data sets, the transformed physical spaces and the usual data analysis tools (e.g. MatLab). TVneXus can convert to various data sets e.g. into powder diffractograms, linear detector projections, rotation crystal pictures or the 2D/3D reciprocal space.
+    </description>
+  </descriptions>
+</resource>
