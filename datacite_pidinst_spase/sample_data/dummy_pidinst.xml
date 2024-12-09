@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instrument>
+  <identifier identifierType="DOI">10.1234/example-instrument-123</identifier>
+  <schemaVersion>1.0</schemaVersion>
+  <landingPage>https://example.org/instruments/123</landingPage>
+  <name>Advanced Spectrophotometer X2000</name>
+  
+  <owners>
+    <owner>
+      <ownerName>National Research Laboratory</ownerName>
+      <ownerContact>contact@nrl.org</ownerContact>
+      <ownerIdentifier ownerIdentifierType="RRID">RRID:NRL-001</ownerIdentifier>
+    </owner>
+  </owners>
+  
+  <manufacturers>
+    <manufacturer>
+      <manufacturerName>Precision Instruments Inc.</manufacturerName>
+      <manufacturerIdentifier manufacturerIdentifierType="URL">https://precision-instruments.com</manufacturerIdentifier>
+    </manufacturer>
+  </manufacturers>
+  
+  <model>
+    <modelName>X2000 Deluxe</modelName>
+    <modelIdentifier modelIdentifierType="SerialNumber">SPX2000-12345</modelIdentifier>
+  </model>
+  
+  <description>High-precision spectrophotometer designed for advanced material analysis and research applications.</description>
+  
+  <instrumentTypes>
+    <instrumentType>
+      <instrumentTypeName>Spectrophotometer</instrumentTypeName>
+      <instrumentTypeIdentifier instrumentTypeIdentifierType="RRID">RRID:SCT:0001234</instrumentTypeIdentifier>
+    </instrumentType>
+  </instrumentTypes>
+  
+  <measuredVariables>
+    <measuredVariable>Optical Density</measuredVariable>
+    <measuredVariable>Light Absorption</measuredVariable>
+    <measuredVariable>Wavelength Transmission</measuredVariable>
+  </measuredVariables>
+  
+  <dates>
+    <date dateType="Commissioned">2022-03-15</date>
+    <date dateType="DeCommissioned">2032-03-14</date>
+  </dates>
+  
+  <relatedIdentifiers>
+    <relatedIdentifier 
+      relatedIdentifierType="DOI" 
+      relationType="IsDescribedBy">10.1234/research-paper-123</relatedIdentifier>
+    <relatedIdentifier 
+      relatedIdentifierType="URL" 
+      relationType="References">https://example.org/instrument-manual</relatedIdentifier>
+  </relatedIdentifiers>
+  
+  <alternateIdentifiers>
+    <alternateIdentifier 
+      alternateIdentifierType="SerialNumber" 
+      alternateIdentifierName="Lab Serial">NRL-SPX-12345</alternateIdentifier>
+    <alternateIdentifier 
+      alternateIdentifierType="InventoryNumber">INST-2022-0123</alternateIdentifier>
+  </alternateIdentifiers>
+</instrument>
