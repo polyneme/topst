@@ -1,0 +1,749 @@
+@prefix ns1: <http://www.spase-group.org/data/schema/> .
+@prefix ns2: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:Spase-379288fc-625e-4840-83ef-a673ced0eb90 a ns1:Spase ;
+    rdfs:label "Spase-379288fc-625e-4840-83ef-a673ced0eb90" ;
+    ns1:has_numerical_data ns1:NOAA_NumericalData_GOES_12_MAG_PT0_512S ;
+    ns1:lang "en"^^xsd:string ;
+    ns1:version "2.3.1"^^xsd:string .
+
+ns1:AccessInformation-32f1f9a3-04d6-4000-8e4e-48b21fb0a7b6 a ns1:AccessInformation ;
+    rdfs:label "AccessInformation-32f1f9a3-04d6-4000-8e4e-48b21fb0a7b6" ;
+    ns1:has_access_url ns1:AccessUrl-a37273b3-e57c-4ea9-8b9e-492407422fc3 ;
+    ns1:has_format ns1:CSV ;
+    ns1:has_repository ns1:SMWG_Repository_NASA_GSFC_SPDF .
+
+ns1:AccessInformation-4dbc3840-8bd5-48d0-aafa-2562753d984b a ns1:AccessInformation ;
+    rdfs:label "AccessInformation-4dbc3840-8bd5-48d0-aafa-2562753d984b" ;
+    ns1:has_access_url ns1:AccessUrl-2aede9a3-b7a1-4050-a440-702f106a26a4,
+        ns1:AccessUrl-44abaeff-12a4-4d3f-8716-b1e6729fb54f,
+        ns1:AccessUrl-a08a0242-bf67-4e5b-845d-57b96de24078 ;
+    ns1:has_format ns1:CDF ;
+    ns1:has_repository ns1:SMWG_Repository_NASA_GSFC_SPDF .
+
+ns1:AccessUrl-2aede9a3-b7a1-4050-a440-702f106a26a4 a ns1:AccessUrl ;
+    rdfs:label "AccessUrl-2aede9a3-b7a1-4050-a440-702f106a26a4" ;
+    ns1:description "In CDF via HTTP from CDAWeb"^^xsd:string ;
+    ns1:name "HTTPS from SPDF"^^xsd:string ;
+    ns1:url "https://spdf.gsfc.nasa.gov/pub/data/goes/goes12/mag_l2/"^^xsd:string .
+
+ns1:AccessUrl-44abaeff-12a4-4d3f-8716-b1e6729fb54f a ns1:AccessUrl ;
+    rdfs:label "AccessUrl-44abaeff-12a4-4d3f-8716-b1e6729fb54f" ;
+    ns1:name "FTPS from SPDF (not with most browsers)"^^xsd:string ;
+    ns1:url "ftps://spdf.gsfc.nasa.gov/pub/data/goes/goes12/mag_l2/"^^xsd:string .
+
+ns1:AccessUrl-a08a0242-bf67-4e5b-845d-57b96de24078 a ns1:AccessUrl ;
+    rdfs:label "AccessUrl-a08a0242-bf67-4e5b-845d-57b96de24078" ;
+    ns1:description "For CDAWeb subset, plot and list capabilities"^^xsd:string ;
+    ns1:name "CDAWeb"^^xsd:string ;
+    ns1:product_key "G12_L2_MAG"^^xsd:string ;
+    ns1:url "https://cdaweb.gsfc.nasa.gov/cgi-bin/eval2.cgi?dataset=G12_L2_MAG&index=sp_phys"^^xsd:string .
+
+ns1:AccessUrl-a37273b3-e57c-4ea9-8b9e-492407422fc3 a ns1:AccessUrl ;
+    rdfs:label "AccessUrl-a37273b3-e57c-4ea9-8b9e-492407422fc3" ;
+    ns1:description "Web Service to this product using the HAPI interface."^^xsd:string ;
+    ns1:name "CDAWeb HAPI Server"^^xsd:string ;
+    ns1:product_key "G12_L2_MAG@0"^^xsd:string,
+        "G12_L2_MAG@1"^^xsd:string,
+        "G12_L2_MAG@2"^^xsd:string ;
+    ns1:url "https://cdaweb.gsfc.nasa.gov/hapi"^^xsd:string .
+
+ns1:Contact-75086029-4957-49c7-98b3-b278041ef572 a ns1:Contact ;
+    rdfs:label "Contact-75086029-4957-49c7-98b3-b278041ef572" ;
+    ns1:has_person ns1:SMWG_Person_Howard_J_Singer ;
+    ns1:has_role ns1:DATA_PRODUCER,
+        ns1:PRINCIPAL_INVESTIGATOR .
+
+ns1:Contact-8c418329-4cf1-46af-8f4a-52de02d722ce a ns1:Contact ;
+    rdfs:label "Contact-8c418329-4cf1-46af-8f4a-52de02d722ce" ;
+    ns1:has_person ns1:SMWG_Person_Ann_Newman ;
+    ns1:has_role ns1:DATA_PRODUCER .
+
+ns1:Contact-d123665b-18ba-44be-8c10-44cabfaa5705 a ns1:Contact ;
+    rdfs:label "Contact-d123665b-18ba-44be-8c10-44cabfaa5705" ;
+    ns1:has_person ns1:SMWG_Person_Lorne_Matheson ;
+    ns1:has_role ns1:DATA_PRODUCER .
+
+ns1:Contact-d92d88f1-8119-4b1b-a261-e95e23101fe9 a ns1:Contact ;
+    rdfs:label "Contact-d92d88f1-8119-4b1b-a261-e95e23101fe9" ;
+    ns1:has_person ns1:SMWG_Person_Jan_Merka ;
+    ns1:has_role ns1:METADATA_CONTACT .
+
+ns1:CoordinateSystem-1fc1607d-bdef-4187-9f52-c34e39ef86f5 a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-1fc1607d-bdef-4187-9f52-c34e39ef86f5" .
+
+ns1:CoordinateSystem-305755f9-e61f-4535-b457-417bf43406ec a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-305755f9-e61f-4535-b457-417bf43406ec" .
+
+ns1:CoordinateSystem-7408af2f-945f-4ddb-ab2b-8411f0358f7c a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-7408af2f-945f-4ddb-ab2b-8411f0358f7c" .
+
+ns1:CoordinateSystem-a8500b67-56b5-4ead-89db-29b01a3bf2fa a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-a8500b67-56b5-4ead-89db-29b01a3bf2fa" .
+
+ns1:CoordinateSystem-a99509fa-1d77-4547-9540-26791f1e988f a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-a99509fa-1d77-4547-9540-26791f1e988f" .
+
+ns1:CoordinateSystem-b1b777ba-6e30-4788-a39f-a46ee0773fa0 a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-b1b777ba-6e30-4788-a39f-a46ee0773fa0" .
+
+ns1:CoordinateSystem-ca85905f-2790-4033-8a2d-60727770b1f6 a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-ca85905f-2790-4033-8a2d-60727770b1f6" .
+
+ns1:CoordinateSystem-cfa615bd-3eec-45d3-b544-4462fa83b6d5 a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-cfa615bd-3eec-45d3-b544-4462fa83b6d5" .
+
+ns1:CoordinateSystem-d561605f-017d-4d6c-ae2a-d1e58440400d a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-d561605f-017d-4d6c-ae2a-d1e58440400d" .
+
+ns1:CoordinateSystem-fc7ea1c3-76e1-4276-b54f-5e583ea513d5 a ns1:CoordinateSystem ;
+    rdfs:label "CoordinateSystem-fc7ea1c3-76e1-4276-b54f-5e583ea513d5" .
+
+ns1:Element-06a0f2d6-c727-44e6-85e4-875ac1b61adf a ns1:Element ;
+    rdfs:label "Element-06a0f2d6-c727-44e6-85e4-875ac1b61adf" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "He, LH-ENP (satellite to Earth)"^^xsd:string .
+
+ns1:Element-085f2001-3e9f-495a-a21c-6613e54e7eeb a ns1:Element ;
+    rdfs:label "Element-085f2001-3e9f-495a-a21c-6613e54e7eeb" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "Vy, GSM"^^xsd:string .
+
+ns1:Element-09bbf970-7d68-487e-8887-99a1acd3cb90 a ns1:Element ;
+    rdfs:label "Element-09bbf970-7d68-487e-8887-99a1acd3cb90" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "Px, GEI"^^xsd:string .
+
+ns1:Element-15a51bbb-1d6b-41e2-9c0e-f1f877d8c1d2 a ns1:Element ;
+    rdfs:label "Element-15a51bbb-1d6b-41e2-9c0e-f1f877d8c1d2" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "Y, GSM"^^xsd:string .
+
+ns1:Element-18292f99-01a4-4adc-95e4-08eb56c975ed a ns1:Element ;
+    rdfs:label "Element-18292f99-01a4-4adc-95e4-08eb56c975ed" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "X, GEI"^^xsd:string .
+
+ns1:Element-26799834-0e5b-449d-960f-2f4a133da126 a ns1:Element ;
+    rdfs:label "Element-26799834-0e5b-449d-960f-2f4a133da126" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Bz, GSM"^^xsd:string .
+
+ns1:Element-354bca5a-7e6a-4e30-8543-29ee2db0b12f a ns1:Element ;
+    rdfs:label "Element-354bca5a-7e6a-4e30-8543-29ee2db0b12f" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Vz, GEI"^^xsd:string .
+
+ns1:Element-4aff700e-e92a-4c5b-b04c-3bcce2dbdf10 a ns1:Element ;
+    rdfs:label "Element-4aff700e-e92a-4c5b-b04c-3bcce2dbdf10" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "Hn, LH-ENP (east, in plane)"^^xsd:string .
+
+ns1:Element-69138683-646d-41eb-8b73-9c45b772db16 a ns1:Element ;
+    rdfs:label "Element-69138683-646d-41eb-8b73-9c45b772db16" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "Vx, GSM"^^xsd:string .
+
+ns1:Element-6d41d342-3b36-45f8-acd0-ace93809669f a ns1:Element ;
+    rdfs:label "Element-6d41d342-3b36-45f8-acd0-ace93809669f" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Bz, GEI"^^xsd:string .
+
+ns1:Element-7d18452e-9f49-41e7-b910-6dd6fe260157 a ns1:Element ;
+    rdfs:label "Element-7d18452e-9f49-41e7-b910-6dd6fe260157" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "Vx, GEI"^^xsd:string .
+
+ns1:Element-7f0878a1-3d16-47a3-851c-8a8090652c8e a ns1:Element ;
+    rdfs:label "Element-7f0878a1-3d16-47a3-851c-8a8090652c8e" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "Bx, GEI"^^xsd:string .
+
+ns1:Element-916d719a-3d4c-4adb-ad0f-8b2c2fbe82c9 a ns1:Element ;
+    rdfs:label "Element-916d719a-3d4c-4adb-ad0f-8b2c2fbe82c9" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Z, GEI"^^xsd:string .
+
+ns1:Element-940dab97-cd69-4588-a424-673aface53c0 a ns1:Element ;
+    rdfs:label "Element-940dab97-cd69-4588-a424-673aface53c0" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "Bx, GSM"^^xsd:string .
+
+ns1:Element-993ac5b1-561c-41ad-8c2d-f75723b10907 a ns1:Element ;
+    rdfs:label "Element-993ac5b1-561c-41ad-8c2d-f75723b10907" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "Y, GEI"^^xsd:string .
+
+ns1:Element-a2a76f69-4016-4a41-8da3-2bdb0e7bede4 a ns1:Element ;
+    rdfs:label "Element-a2a76f69-4016-4a41-8da3-2bdb0e7bede4" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Hp, LH-ENP (perpendicular to plane)"^^xsd:string .
+
+ns1:Element-b7054c97-bd37-40f1-aad3-6a5ef1f55576 a ns1:Element ;
+    rdfs:label "Element-b7054c97-bd37-40f1-aad3-6a5ef1f55576" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "Py, GEI"^^xsd:string .
+
+ns1:Element-c62fd83b-18e9-4cf7-a874-ec8b04dc6d5f a ns1:Element ;
+    rdfs:label "Element-c62fd83b-18e9-4cf7-a874-ec8b04dc6d5f" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Z, GSM"^^xsd:string .
+
+ns1:Element-d090546d-4449-468e-8410-078af7e68cf4 a ns1:Element ;
+    rdfs:label "Element-d090546d-4449-468e-8410-078af7e68cf4" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "By, GEI"^^xsd:string .
+
+ns1:Element-da452db1-fe7a-405c-a043-b8e690885852 a ns1:Element ;
+    rdfs:label "Element-da452db1-fe7a-405c-a043-b8e690885852" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Pz, GEI"^^xsd:string .
+
+ns1:Element-da88881b-5f49-45b0-80c2-24fa06663787 a ns1:Element ;
+    rdfs:label "Element-da88881b-5f49-45b0-80c2-24fa06663787" ;
+    ns1:has_qualifier ns1:COMPONENT_I ;
+    ns1:index "1"^^xsd:int ;
+    ns1:name "X, GSM"^^xsd:string .
+
+ns1:Element-e16dcdc4-795f-4100-ac3c-54197a926680 a ns1:Element ;
+    rdfs:label "Element-e16dcdc4-795f-4100-ac3c-54197a926680" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "Vy, GEI"^^xsd:string .
+
+ns1:Element-f226d48c-a571-467f-96cd-c38cfd1ccc58 a ns1:Element ;
+    rdfs:label "Element-f226d48c-a571-467f-96cd-c38cfd1ccc58" ;
+    ns1:has_qualifier ns1:COMPONENT_J ;
+    ns1:index "2"^^xsd:int ;
+    ns1:name "By, GSM"^^xsd:string .
+
+ns1:Element-fb032c0c-1e1d-4562-b244-20f90016608a a ns1:Element ;
+    rdfs:label "Element-fb032c0c-1e1d-4562-b244-20f90016608a" ;
+    ns1:has_qualifier ns1:COMPONENT_K ;
+    ns1:index "3"^^xsd:int ;
+    ns1:name "Vz, GSM"^^xsd:string .
+
+ns1:FieldType-3b6a384f-bae5-42af-a084-0291f022561f a ns1:FieldType ;
+    rdfs:label "FieldType-3b6a384f-bae5-42af-a084-0291f022561f" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:FieldType-45f609c2-c8a4-4aa2-9865-bd1652cea026 a ns1:FieldType ;
+    rdfs:label "FieldType-45f609c2-c8a4-4aa2-9865-bd1652cea026" ;
+    ns1:has_qualifier ns1:MAGNITUDE .
+
+ns1:FieldType-b60b2cc3-397a-4f2f-aaf5-d8e8f0e2b086 a ns1:FieldType ;
+    rdfs:label "FieldType-b60b2cc3-397a-4f2f-aaf5-d8e8f0e2b086" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:FieldType-df5a5f67-ce0b-4ab0-a5dc-300de1d815b0 a ns1:FieldType ;
+    rdfs:label "FieldType-df5a5f67-ce0b-4ab0-a5dc-300de1d815b0" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:Parameter-196b6731-f3c8-4761-aa6b-b6f2c0d3c886 a ns1:Parameter ;
+    rdfs:label "Parameter-196b6731-f3c8-4761-aa6b-b6f2c0d3c886" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description "Magnetotorquer T2 filtered counts. Signed counts smoothed by 3-point average, delayed, or smoothed by Farthing coefficients."^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_support ns1:Support-28c06eaa-005d-461c-a4e8-315a40eb89fd ;
+    ns1:name "g12_t2_counts"^^xsd:string ;
+    ns1:parameter_key "g12_t2_counts"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-1e536882-0c29-48e8-a76f-1ede4270c505 a ns1:Parameter ;
+    rdfs:label "Parameter-1e536882-0c29-48e8-a76f-1ede4270c505" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "GEOS 12 ephemeris epoch, UTC"^^xsd:string ;
+    ns1:fill_value "9999-12-31T23:59:59"^^xsd:string ;
+    ns1:has_support ns1:Support-fbfeec79-b70d-429b-a51b-008a470ed9ee ;
+    ns1:name "g12_ephem_epoch"^^xsd:string ;
+    ns1:parameter_key "g12_ephem_epoch"^^xsd:string ;
+    ns1:valid_max "2100-12-31T23:59:59"^^xsd:string ;
+    ns1:valid_min "2001-01-01T00:00:00"^^xsd:string .
+
+ns1:Parameter-31b682b0-ad87-44b1-a6d9-4f8ce79fe74b a ns1:Parameter ;
+    rdfs:label "Parameter-31b682b0-ad87-44b1-a6d9-4f8ce79fe74b" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description """Magnetic field vector samples in ENP coordinates.
+
+Coordinate description for historically used PEN system:
+
+* Hp magnetic field vector component, points northward, perpendicular to orbit plane which for a 0° inclination orbit is parallel to spin axis of the Earth
+* He magnetic field vector component, perpendicular to Hp and Hn and points earthward
+* Hn magnetic field vector component, perpendicular to Hp and He and points eastward
+* Ht total field"""^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-cfa615bd-3eec-45d3-b544-4462fa83b6d5 ;
+    ns1:has_field_value ns1:FieldType-3b6a384f-bae5-42af-a084-0291f022561f ;
+    ns1:has_structure ns1:Structure-9a2338f9-e128-4102-8fcb-eb1415835cec ;
+    ns1:name "g12_b_enp"^^xsd:string ;
+    ns1:parameter_key "g12_b_enp"^^xsd:string ;
+    ns1:units "nT"^^xsd:string ;
+    ns1:units_conversion "1.0e-9>T"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-3971da6f-fa9c-4a9f-a5e8-55f4c5007002 a ns1:Parameter ;
+    rdfs:label "Parameter-3971da6f-fa9c-4a9f-a5e8-55f4c5007002" ;
+    ns1:description "Data epoch range, UTC"^^xsd:string ;
+    ns1:fill_value "9999-12-31T23:59:59"^^xsd:string ;
+    ns1:has_support ns1:Support-2c7e2e99-1a71-4ed8-9220-abcdd1b3b0fd ;
+    ns1:name "range_epoch"^^xsd:string ;
+    ns1:parameter_key "range_epoch"^^xsd:string ;
+    ns1:units "ms"^^xsd:string ;
+    ns1:units_conversion "1.0e-3>s"^^xsd:string ;
+    ns1:valid_max "2029-12-31T23:59:59"^^xsd:string ;
+    ns1:valid_min "1990-01-01T00:00:00"^^xsd:string .
+
+ns1:Parameter-3b7a7c62-91d9-4408-b26b-7fe088f91448 a ns1:Parameter ;
+    rdfs:label "Parameter-3b7a7c62-91d9-4408-b26b-7fe088f91448" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description "Magnetic field vector samples in GSM coordinates"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-7408af2f-945f-4ddb-ab2b-8411f0358f7c ;
+    ns1:has_field_value ns1:FieldType-df5a5f67-ce0b-4ab0-a5dc-300de1d815b0 ;
+    ns1:has_structure ns1:Structure-ccbf6417-9c1d-4733-b974-c497ea0d39d2 ;
+    ns1:name "g12_b_gsm"^^xsd:string ;
+    ns1:parameter_key "g12_b_gsm"^^xsd:string ;
+    ns1:units "nT"^^xsd:string ;
+    ns1:units_conversion "1.0e-9>T"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-55378288-5be0-4d77-ad60-9d15bd60b18c a ns1:Parameter ;
+    rdfs:label "Parameter-55378288-5be0-4d77-ad60-9d15bd60b18c" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:caveats "Unleaped seconds"^^xsd:string ;
+    ns1:description "GEOS 12 ephemeris time, UTC, in seconds since 1970-01-01T00:00:00"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_support ns1:Support-ec588cfc-050b-4c04-bf62-e6a892eb5de3 ;
+    ns1:name "g12_ephem_time"^^xsd:string ;
+    ns1:parameter_key "g12_ephem_time"^^xsd:string ;
+    ns1:units "s"^^xsd:string ;
+    ns1:valid_max "5.0E9"^^xsd:string ;
+    ns1:valid_min "0.0"^^xsd:string .
+
+ns1:Parameter-5deffede-0feb-48a7-bce0-92bff789a676 a ns1:Parameter ;
+    rdfs:label "Parameter-5deffede-0feb-48a7-bce0-92bff789a676" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description """Data Quality Flag: An integer with a value from 1 through 7 indicating data quality, with 1 and 2 being no data, and 7 being the best data.
+
+Possible data quality values:
+
+* 0 no satellite data
+* 1 no Magnetometer data
+* 2 satellite is in storage (spinning) mode or non-standard attitude
+* 3 satellite is in calibration mode
+* 4 3-point averaging failed
+* 5 torquer value not adjusted for commands
+* 6 smoothed with commands but not with Farthing coefficients
+* 7 best quality, smoothed with commands and Farthing coefficients
+
+Commands are not always available in the telemetry, in which case, a 3-point average is done."""^^xsd:string ;
+    ns1:fill_value "4294967295"^^xsd:string ;
+    ns1:has_support ns1:Support-de222819-61c9-401f-9a9b-4dddbbb3fd19 ;
+    ns1:name "g12_dataqual"^^xsd:string ;
+    ns1:parameter_key "g12_dataqual"^^xsd:string ;
+    ns1:valid_max "7"^^xsd:string ;
+    ns1:valid_min "0"^^xsd:string .
+
+ns1:Parameter-5fec0e9d-93f4-4257-9411-c7fad7988268 a ns1:Parameter ;
+    rdfs:label "Parameter-5fec0e9d-93f4-4257-9411-c7fad7988268" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description "Total magnetic field strength"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_field_value ns1:FieldType-45f609c2-c8a4-4aa2-9865-bd1652cea026 ;
+    ns1:name "g12_b_tot"^^xsd:string ;
+    ns1:parameter_key "g12_b_tot"^^xsd:string ;
+    ns1:units "nT"^^xsd:string ;
+    ns1:units_conversion "1.0e-9>T"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-6f3915f0-b622-4090-afca-0fe8042db30b a ns1:Parameter ;
+    rdfs:label "Parameter-6f3915f0-b622-4090-afca-0fe8042db30b" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description "g12_sample_epoch"^^xsd:string ;
+    ns1:fill_value "9999-12-31T23:59:59"^^xsd:string ;
+    ns1:has_support ns1:Support-b5ec5837-baa8-4506-a8d9-60a0c292ce76 ;
+    ns1:name "g12_sample_epoch"^^xsd:string ;
+    ns1:parameter_key "GEOS 12 sample epoch, UTC"^^xsd:string ;
+    ns1:valid_max "2100-12-31T23:59:59"^^xsd:string ;
+    ns1:valid_min "2001-01-01T00:00:00"^^xsd:string .
+
+ns1:Parameter-78ca8866-1db6-4a2f-b990-d73a7c6c485e a ns1:Parameter ;
+    rdfs:label "Parameter-78ca8866-1db6-4a2f-b990-d73a7c6c485e" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:caveats "Unleaped seconds"^^xsd:string ;
+    ns1:description "GEOS 12 sample time, UTC, in seconds since 1970-01-01T00:00:00"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_support ns1:Support-2bf29fe6-beed-4c3a-bcf4-e883b6d723a5 ;
+    ns1:name "g12_sample_time"^^xsd:string ;
+    ns1:parameter_key "g12_sample_time"^^xsd:string ;
+    ns1:units "s"^^xsd:string ;
+    ns1:valid_max "5.0E9"^^xsd:string ;
+    ns1:valid_min "0.0"^^xsd:string .
+
+ns1:Parameter-8185a84d-07e0-43e8-a97c-cfc20e19fe1f a ns1:Parameter ;
+    rdfs:label "Parameter-8185a84d-07e0-43e8-a97c-cfc20e19fe1f" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "Satellite position vector in GEI coordinates"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-305755f9-e61f-4535-b457-417bf43406ec ;
+    ns1:has_structure ns1:Structure-ba29e11d-4674-46c9-8d5f-5cf1b380231f ;
+    ns1:has_support ns1:Support-8c891179-000a-45d4-8045-40dfa15c7a86 ;
+    ns1:name "g12_pos_gei"^^xsd:string ;
+    ns1:parameter_key "g12_pos_gei"^^xsd:string ;
+    ns1:units "km"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-83e91d83-3c06-45d6-8319-6793c91fb15b a ns1:Parameter ;
+    rdfs:label "Parameter-83e91d83-3c06-45d6-8319-6793c91fb15b" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description "Magnetotorquer T1 filtered counts. Signed counts smoothed by 3-point average, delayed, or smoothed by Farthing coefficients."^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_support ns1:Support-e1819871-34b5-4c60-bd20-7ce9be68f350 ;
+    ns1:name "g12_t1_counts"^^xsd:string ;
+    ns1:parameter_key "g12_t1_counts"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-88072f3d-9223-44a1-ac0c-4994f964b014 a ns1:Parameter ;
+    rdfs:label "Parameter-88072f3d-9223-44a1-ac0c-4994f964b014" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "g12_perpendicular"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-a99509fa-1d77-4547-9540-26791f1e988f ;
+    ns1:has_structure ns1:Structure-feaf90a1-66fd-43e6-97c9-c326a479a93e ;
+    ns1:has_support ns1:Support-5cadcd33-ec56-45e0-abd8-8a9c76e321d0 ;
+    ns1:name "g12_perp"^^xsd:string ;
+    ns1:parameter_key "g12_perp"^^xsd:string ;
+    ns1:valid_max "1.0"^^xsd:string ;
+    ns1:valid_min "-1.0"^^xsd:string .
+
+ns1:Parameter-8c42acea-28c8-4704-8c99-1c754c87ea5d a ns1:Parameter ;
+    rdfs:label "Parameter-8c42acea-28c8-4704-8c99-1c754c87ea5d" ;
+    ns1:cadence "P1D"^^xsd:duration ;
+    ns1:description "GEOS 12 longitude epoch"^^xsd:string ;
+    ns1:fill_value "9999-12-31T23:59:59"^^xsd:string ;
+    ns1:has_support ns1:Support-c7a63fed-cc1d-4154-a1ea-1b65ab76b60b ;
+    ns1:name "g12_longitude_epoch"^^xsd:string ;
+    ns1:parameter_key "g12_longitude_epoch"^^xsd:string ;
+    ns1:valid_max "2100-12-31T23:59:59"^^xsd:string ;
+    ns1:valid_min "2001-01-01T00:00:00"^^xsd:string .
+
+ns1:Parameter-96c37099-1948-484b-bf46-ca974a74463e a ns1:Parameter ;
+    rdfs:label "Parameter-96c37099-1948-484b-bf46-ca974a74463e" ;
+    ns1:cadence "P1D"^^xsd:duration ;
+    ns1:description "Satellite geographic west longitude at noon UTC"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-b1b777ba-6e30-4788-a39f-a46ee0773fa0 ;
+    ns1:has_support ns1:Support-cc4e4c7a-49ff-4ce3-9f83-a4861129c02f ;
+    ns1:name "g12_longitude"^^xsd:string ;
+    ns1:parameter_key "g12_longitude"^^xsd:string ;
+    ns1:units "°"^^xsd:string ;
+    ns1:valid_max "180.0"^^xsd:string ;
+    ns1:valid_min "-180.0"^^xsd:string .
+
+ns1:Parameter-a7fcf1a3-2407-4f43-892b-3d52d9c8f720 a ns1:Parameter ;
+    rdfs:label "Parameter-a7fcf1a3-2407-4f43-892b-3d52d9c8f720" ;
+    ns1:cadence "P1D"^^xsd:duration ;
+    ns1:caveats "Unleaped seconds"^^xsd:string ;
+    ns1:description "GEOS 12 longitude time, UTC, in seconds since 1970-01-01T00:00:00"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_support ns1:Support-e2383a23-84da-477b-96f0-1cfb0ac03e46 ;
+    ns1:name "g12_longitude_time"^^xsd:string ;
+    ns1:parameter_key "g12_longitude_time"^^xsd:string ;
+    ns1:units "s"^^xsd:string ;
+    ns1:valid_max "5.0E9"^^xsd:string ;
+    ns1:valid_min "0.0"^^xsd:string .
+
+ns1:Parameter-b903c1bb-84d0-4008-b7a0-8e31dfe5065a a ns1:Parameter ;
+    rdfs:label "Parameter-b903c1bb-84d0-4008-b7a0-8e31dfe5065a" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:description "Magnetic field vector samples in GEI coordinates"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-a8500b67-56b5-4ead-89db-29b01a3bf2fa ;
+    ns1:has_field_value ns1:FieldType-b60b2cc3-397a-4f2f-aaf5-d8e8f0e2b086 ;
+    ns1:has_structure ns1:Structure-47edf019-e161-411d-9fb8-89864b0c0c91 ;
+    ns1:name "g12_b_gei"^^xsd:string ;
+    ns1:parameter_key "g12_b_gei"^^xsd:string ;
+    ns1:units "nT"^^xsd:string ;
+    ns1:units_conversion "1.0e-9>T"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-e008550a-76f8-4009-bc84-ee002bb51e31 a ns1:Parameter ;
+    rdfs:label "Parameter-e008550a-76f8-4009-bc84-ee002bb51e31" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "Satellite position vector in GSM coordinates"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-ca85905f-2790-4033-8a2d-60727770b1f6 ;
+    ns1:has_structure ns1:Structure-515d341e-8721-41ef-8fc7-6d0f48b1d4ed ;
+    ns1:has_support ns1:Support-2882ed2c-bb5c-455e-8551-e7820eefc5ed ;
+    ns1:name "g12_pos_gsm"^^xsd:string ;
+    ns1:parameter_key "g12_pos_gsm"^^xsd:string ;
+    ns1:units "km"^^xsd:string ;
+    ns1:valid_max "1.0e6"^^xsd:string ;
+    ns1:valid_min "-1.0e6"^^xsd:string .
+
+ns1:Parameter-ee6b27b3-6d46-4aff-a3f5-c19f3abbebfe a ns1:Parameter ;
+    rdfs:label "Parameter-ee6b27b3-6d46-4aff-a3f5-c19f3abbebfe" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "Magnetic local time at satellite position"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-d561605f-017d-4d6c-ae2a-d1e58440400d ;
+    ns1:has_support ns1:Support-e1948d98-888a-4c36-bebe-196ac753ce5b ;
+    ns1:name "g12_mlt"^^xsd:string ;
+    ns1:parameter_key "g12_mlt"^^xsd:string ;
+    ns1:units "h"^^xsd:string ;
+    ns1:units_conversion "(g12_mlt-12)*15>°"^^xsd:string ;
+    ns1:valid_max "24.0"^^xsd:string ;
+    ns1:valid_min "0.0"^^xsd:string .
+
+ns1:Parameter-ef0dada9-8a09-4e58-a812-be2a5b8c8c9f a ns1:Parameter ;
+    rdfs:label "Parameter-ef0dada9-8a09-4e58-a812-be2a5b8c8c9f" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "Satellite velocity vector in GEI coordinates"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-1fc1607d-bdef-4187-9f52-c34e39ef86f5 ;
+    ns1:has_structure ns1:Structure-6dae81bd-9296-4dc8-9bc0-112552138d43 ;
+    ns1:has_support ns1:Support-0f46f71a-8b44-4f50-8ec1-d965cac7f45f ;
+    ns1:name "g12_vel_gei"^^xsd:string ;
+    ns1:parameter_key "g12_vel_gei"^^xsd:string ;
+    ns1:units "km/s"^^xsd:string ;
+    ns1:valid_max "1000.0"^^xsd:string ;
+    ns1:valid_min "-1000.0"^^xsd:string .
+
+ns1:Parameter-f99851df-2ec3-4993-9d22-175c61cecd3b a ns1:Parameter ;
+    rdfs:label "Parameter-f99851df-2ec3-4993-9d22-175c61cecd3b" ;
+    ns1:cadence "PT1M"^^xsd:duration ;
+    ns1:description "Satellite velocity vector in GSM coordinates"^^xsd:string ;
+    ns1:fill_value "NaN"^^xsd:string ;
+    ns1:has_coordinate_system ns1:CoordinateSystem-fc7ea1c3-76e1-4276-b54f-5e583ea513d5 ;
+    ns1:has_structure ns1:Structure-3840c67b-83ca-42b5-b25f-61fcd28ee980 ;
+    ns1:has_support ns1:Support-e4b2a44b-2aa4-4e32-aff4-ad783cc4bde2 ;
+    ns1:name "g12_vel_gsm"^^xsd:string ;
+    ns1:parameter_key "g12_vel_gsm"^^xsd:string ;
+    ns1:units "km/s"^^xsd:string ;
+    ns1:valid_max "1000.0"^^xsd:string ;
+    ns1:valid_min "-1000.0"^^xsd:string .
+
+ns1:ResourceHeader-9ffc7a1c-0354-4c18-a889-f369467b68e1 a ns1:ResourceHeader ;
+    rdfs:label "ResourceHeader-9ffc7a1c-0354-4c18-a889-f369467b68e1" ;
+    ns1:acknowledgement "NASA Contract NAS5-02099"^^xsd:string ;
+    ns1:description """GOES 12 magnetic field data at 0.512 s time resolution. The vector magnetic field is given in the spacecraft Earth-referenced coordinate system:  Hp, He, Hn, and Ht, where  Hp is perpendicular to the satellite orbital plane, or parallel to spin axis of the Earth in the case of a 0° inclination orbit, He is perpendicular to Hp and directed earthward, Hn is perpendicular to both Hp and He and directed eastward, and Ht is the total field.
+
+This data product also provides GOES 12 satellite positions and velocities derived from SSCWEB GEI ephemeris, interpolated to 1 min time resolution.
+
+The magnetometer data are downlinked from the spacecraft in real-time to the NOAA Space Weather Prediction Center (SWPC) in Boulder, Colorado. The data from the raw Command and Data Acquisition (CDA) telemetry stream are processed by pre-processors at SWPC and from there 1 min averages are distributed to SWPC Space Weather Operations, as well a archived at the NOAA National Geophysical Data Center (NGDC) and the NASA Coordinated Data Analysis Web (http://cdaweb.gsfc.nasa.gov/). The raw high resolution data are corrected and processed at the NOAA SWPC, and later archived at NGDC.
+
+The major issue for processing the high resolution data is correction for the magnetic signature of spacecraft torquer currents as briefly discussed in the magnetometer instrument descriptions. In normal operation, the magnetometer samples its three axes every 0.512 s, synchronized with the telemetry frames.  The magnetometer has an anti-aliasing low-pass filter on each axis.  As part of the attitude control on the spacecraft, there are two magnetic torquers.  At the magnetometers, these torquers can generate magnetic fields larger than the ambient fields to be measured.  Therefore signals from these torquer currents need to be removed. The torquer currents are measured at the same rate as the magnetometer rate, and the currents are used to correct the magnetometer measurements.
+
+However, the torquer currents were not low-pass filtered.  As a result, large instantaneous steps in the torquer currents show up in the magnetometer data as a delayed, slowly rising wave with some ringing, just what one would expect from the magnetometer low-pass filters. The so-called "Farthing coefficients" simulate, from a short past history of the torquer measurements, the effects of the magnetometer filters.  The torquer current changes are asynchronous with the telemetry frames and the timing between these events must be measured to a eighth of a telemetry frame interval for good performance. The transient responses in changes in torquer currents are reduced, but not eliminated for large changes in torquer currents.
+
+There exists one opportunity at the beginning of each mission to perform a spacecraft rotation maneuver to determine magnetometer offsets. These offsets are used through the duration of the lifetime of each satellite.
+
+Approximate coefficients are:
+
+* 0.8 mA per torquer current count
+* 4 counts per torquer current command step (3.2 mA per command step)
+* 410 mA full scale current
+* 32 magnetometer counts per nT (approximate)
+* 8 torquer step counts can be up to approximately 0.5 nT (depends on axis, which torquer, which satellite, etc.)"""^^xsd:string ;
+    ns1:has_contact ns1:Contact-75086029-4957-49c7-98b3-b278041ef572,
+        ns1:Contact-8c418329-4cf1-46af-8f4a-52de02d722ce,
+        ns1:Contact-d123665b-18ba-44be-8c10-44cabfaa5705,
+        ns1:Contact-d92d88f1-8119-4b1b-a261-e95e23101fe9 ;
+    ns1:prior_id "spase://VMO/NumericalData/GOES/12/MAG/PT0.512S"^^xsd:string,
+        "spase://VMO/NumericalData/GOES12/MAG/PT0.512S"^^xsd:string,
+        "spase://VSPO/NumericalData/GOES/12/MAG/PT0.512S"^^xsd:string ;
+    ns1:release_date "2021-04-27T17:52:57Z"^^xsd:dateTime ;
+    ns1:resource_name "GOES 12 high resolution magnetometer data"^^xsd:string .
+
+ns1:SMWG_Instrument_GOES_12_MAG a ns1:Instrument .
+
+ns1:Structure-3840c67b-83ca-42b5-b25f-61fcd28ee980 a ns1:Structure ;
+    rdfs:label "Structure-3840c67b-83ca-42b5-b25f-61fcd28ee980" ;
+    ns1:has_element ns1:Element-085f2001-3e9f-495a-a21c-6613e54e7eeb,
+        ns1:Element-69138683-646d-41eb-8b73-9c45b772db16,
+        ns1:Element-fb032c0c-1e1d-4562-b244-20f90016608a ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-47edf019-e161-411d-9fb8-89864b0c0c91 a ns1:Structure ;
+    rdfs:label "Structure-47edf019-e161-411d-9fb8-89864b0c0c91" ;
+    ns1:has_element ns1:Element-6d41d342-3b36-45f8-acd0-ace93809669f,
+        ns1:Element-7f0878a1-3d16-47a3-851c-8a8090652c8e,
+        ns1:Element-d090546d-4449-468e-8410-078af7e68cf4 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-515d341e-8721-41ef-8fc7-6d0f48b1d4ed a ns1:Structure ;
+    rdfs:label "Structure-515d341e-8721-41ef-8fc7-6d0f48b1d4ed" ;
+    ns1:has_element ns1:Element-15a51bbb-1d6b-41e2-9c0e-f1f877d8c1d2,
+        ns1:Element-c62fd83b-18e9-4cf7-a874-ec8b04dc6d5f,
+        ns1:Element-da88881b-5f49-45b0-80c2-24fa06663787 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-6dae81bd-9296-4dc8-9bc0-112552138d43 a ns1:Structure ;
+    rdfs:label "Structure-6dae81bd-9296-4dc8-9bc0-112552138d43" ;
+    ns1:has_element ns1:Element-354bca5a-7e6a-4e30-8543-29ee2db0b12f,
+        ns1:Element-7d18452e-9f49-41e7-b910-6dd6fe260157,
+        ns1:Element-e16dcdc4-795f-4100-ac3c-54197a926680 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-9a2338f9-e128-4102-8fcb-eb1415835cec a ns1:Structure ;
+    rdfs:label "Structure-9a2338f9-e128-4102-8fcb-eb1415835cec" ;
+    ns1:has_element ns1:Element-06a0f2d6-c727-44e6-85e4-875ac1b61adf,
+        ns1:Element-4aff700e-e92a-4c5b-b04c-3bcce2dbdf10,
+        ns1:Element-a2a76f69-4016-4a41-8da3-2bdb0e7bede4 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-ba29e11d-4674-46c9-8d5f-5cf1b380231f a ns1:Structure ;
+    rdfs:label "Structure-ba29e11d-4674-46c9-8d5f-5cf1b380231f" ;
+    ns1:has_element ns1:Element-18292f99-01a4-4adc-95e4-08eb56c975ed,
+        ns1:Element-916d719a-3d4c-4adb-ad0f-8b2c2fbe82c9,
+        ns1:Element-993ac5b1-561c-41ad-8c2d-f75723b10907 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-ccbf6417-9c1d-4733-b974-c497ea0d39d2 a ns1:Structure ;
+    rdfs:label "Structure-ccbf6417-9c1d-4733-b974-c497ea0d39d2" ;
+    ns1:has_element ns1:Element-26799834-0e5b-449d-960f-2f4a133da126,
+        ns1:Element-940dab97-cd69-4588-a424-673aface53c0,
+        ns1:Element-f226d48c-a571-467f-96cd-c38cfd1ccc58 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Structure-feaf90a1-66fd-43e6-97c9-c326a479a93e a ns1:Structure ;
+    rdfs:label "Structure-feaf90a1-66fd-43e6-97c9-c326a479a93e" ;
+    ns1:has_element ns1:Element-09bbf970-7d68-487e-8887-99a1acd3cb90,
+        ns1:Element-b7054c97-bd37-40f1-aad3-6a5ef1f55576,
+        ns1:Element-da452db1-fe7a-405c-a043-b8e690885852 ;
+    ns1:size "3"^^xsd:int .
+
+ns1:Support-0f46f71a-8b44-4f50-8ec1-d965cac7f45f a ns1:Support ;
+    rdfs:label "Support-0f46f71a-8b44-4f50-8ec1-d965cac7f45f" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:Support-2882ed2c-bb5c-455e-8551-e7820eefc5ed a ns1:Support ;
+    rdfs:label "Support-2882ed2c-bb5c-455e-8551-e7820eefc5ed" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:Support-28c06eaa-005d-461c-a4e8-315a40eb89fd a ns1:Support ;
+    rdfs:label "Support-28c06eaa-005d-461c-a4e8-315a40eb89fd" .
+
+ns1:Support-2bf29fe6-beed-4c3a-bcf4-e883b6d723a5 a ns1:Support ;
+    rdfs:label "Support-2bf29fe6-beed-4c3a-bcf4-e883b6d723a5" .
+
+ns1:Support-2c7e2e99-1a71-4ed8-9220-abcdd1b3b0fd a ns1:Support ;
+    rdfs:label "Support-2c7e2e99-1a71-4ed8-9220-abcdd1b3b0fd" .
+
+ns1:Support-5cadcd33-ec56-45e0-abd8-8a9c76e321d0 a ns1:Support ;
+    rdfs:label "Support-5cadcd33-ec56-45e0-abd8-8a9c76e321d0" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:Support-8c891179-000a-45d4-8045-40dfa15c7a86 a ns1:Support ;
+    rdfs:label "Support-8c891179-000a-45d4-8045-40dfa15c7a86" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:Support-b5ec5837-baa8-4506-a8d9-60a0c292ce76 a ns1:Support ;
+    rdfs:label "Support-b5ec5837-baa8-4506-a8d9-60a0c292ce76" .
+
+ns1:Support-c7a63fed-cc1d-4154-a1ea-1b65ab76b60b a ns1:Support ;
+    rdfs:label "Support-c7a63fed-cc1d-4154-a1ea-1b65ab76b60b" .
+
+ns1:Support-cc4e4c7a-49ff-4ce3-9f83-a4861129c02f a ns1:Support ;
+    rdfs:label "Support-cc4e4c7a-49ff-4ce3-9f83-a4861129c02f" ;
+    ns1:has_qualifier ns1:DIRECTION_ANGLE_AZIMUTH_ANGLE .
+
+ns1:Support-de222819-61c9-401f-9a9b-4dddbbb3fd19 a ns1:Support ;
+    rdfs:label "Support-de222819-61c9-401f-9a9b-4dddbbb3fd19" .
+
+ns1:Support-e1819871-34b5-4c60-bd20-7ce9be68f350 a ns1:Support ;
+    rdfs:label "Support-e1819871-34b5-4c60-bd20-7ce9be68f350" .
+
+ns1:Support-e1948d98-888a-4c36-bebe-196ac753ce5b a ns1:Support ;
+    rdfs:label "Support-e1948d98-888a-4c36-bebe-196ac753ce5b" ;
+    ns1:has_qualifier ns1:DIRECTION_ANGLE_AZIMUTH_ANGLE .
+
+ns1:Support-e2383a23-84da-477b-96f0-1cfb0ac03e46 a ns1:Support ;
+    rdfs:label "Support-e2383a23-84da-477b-96f0-1cfb0ac03e46" .
+
+ns1:Support-e4b2a44b-2aa4-4e32-aff4-ad783cc4bde2 a ns1:Support ;
+    rdfs:label "Support-e4b2a44b-2aa4-4e32-aff4-ad783cc4bde2" ;
+    ns1:has_qualifier ns1:VECTOR .
+
+ns1:Support-ec588cfc-050b-4c04-bf62-e6a892eb5de3 a ns1:Support ;
+    rdfs:label "Support-ec588cfc-050b-4c04-bf62-e6a892eb5de3" .
+
+ns1:Support-fbfeec79-b70d-429b-a51b-008a470ed9ee a ns1:Support ;
+    rdfs:label "Support-fbfeec79-b70d-429b-a51b-008a470ed9ee" .
+
+ns1:TemporalDescription-e416d3e4-2127-4a3f-b205-504e65015d20 a ns1:TemporalDescription ;
+    rdfs:label "TemporalDescription-e416d3e4-2127-4a3f-b205-504e65015d20" ;
+    ns1:cadence "PT0.512S"^^xsd:duration ;
+    ns1:has_time_span ns1:TimeSpan-d8a3646f-f051-48f3-b8c7-db8eb4d2ebd3 .
+
+ns1:TimeSpan-d8a3646f-f051-48f3-b8c7-db8eb4d2ebd3 a ns1:TimeSpan ;
+    rdfs:label "TimeSpan-d8a3646f-f051-48f3-b8c7-db8eb4d2ebd3" ;
+    ns1:start_date "2007-09-15T23:59:58"^^xsd:dateTime ;
+    ns1:stop_date "2008-06-30T23:59:58"^^xsd:dateTime .
+
+ns1:NOAA_NumericalData_GOES_12_MAG_PT0_512S a ns1:NumericalData ;
+    rdfs:label "NOAA_NumericalData_GOES_12_MAG_PT0_512S" ;
+    ns2:identifier "spase://NOAA/NumericalData/GOES/12/MAG/PT0.512S" ;
+    ns1:caveats """Note that magnetic field values have been replaced with missing data values during calibration periods. Also, note that there can be small jumps in the data (typically <1 nT) when the torquer counts go through zero. The magnitude of the effect can be different for different spacecraft.
+
+The GOES 8 to GOES 12 spacecraft are 3-axis stabilized and there is only one opportunity for a spin maneuver at the beginning of the mission to determine on-orbit offsets. There are additional complications that result from needing to know the changing offsets introduced by torquer coils on the satellites. Though comparisons of data to model fields during quiet times, we are doing rather well with the offsets, but it is not possible to give an exact number for the accuracy. We continue to look at comparisons of data and models, and data to other nearby spacecraft encounters. We are interested in anything learned by the user, or working with the user to help interpret the data, or to answer questions. While we have put in a significant effort to remove the effects of torquer coil interference, in the 0.512 s data there can be small, typically less than 1 nT spikes in the data at the time of torquer current changes. More information on this topic is included the more extensive "readme file". This file is a living document that will be updated periodically."""^^xsd:string ;
+    ns1:has_access_information ns1:AccessInformation-32f1f9a3-04d6-4000-8e4e-48b21fb0a7b6,
+        ns1:AccessInformation-4dbc3840-8bd5-48d0-aafa-2562753d984b ;
+    ns1:has_instrument ns1:SMWG_Instrument_GOES_12_MAG ;
+    ns1:has_measurement_type ns1:EPHEMERIS,
+        ns1:MAGNETIC_FIELD ;
+    ns1:has_observed_region ns1:EARTH_MAGNETOSPHERE_MAIN ;
+    ns1:has_parameter ns1:Parameter-196b6731-f3c8-4761-aa6b-b6f2c0d3c886,
+        ns1:Parameter-1e536882-0c29-48e8-a76f-1ede4270c505,
+        ns1:Parameter-31b682b0-ad87-44b1-a6d9-4f8ce79fe74b,
+        ns1:Parameter-3971da6f-fa9c-4a9f-a5e8-55f4c5007002,
+        ns1:Parameter-3b7a7c62-91d9-4408-b26b-7fe088f91448,
+        ns1:Parameter-55378288-5be0-4d77-ad60-9d15bd60b18c,
+        ns1:Parameter-5deffede-0feb-48a7-bce0-92bff789a676,
+        ns1:Parameter-5fec0e9d-93f4-4257-9411-c7fad7988268,
+        ns1:Parameter-6f3915f0-b622-4090-afca-0fe8042db30b,
+        ns1:Parameter-78ca8866-1db6-4a2f-b990-d73a7c6c485e,
+        ns1:Parameter-8185a84d-07e0-43e8-a97c-cfc20e19fe1f,
+        ns1:Parameter-83e91d83-3c06-45d6-8319-6793c91fb15b,
+        ns1:Parameter-88072f3d-9223-44a1-ac0c-4994f964b014,
+        ns1:Parameter-8c42acea-28c8-4704-8c99-1c754c87ea5d,
+        ns1:Parameter-96c37099-1948-484b-bf46-ca974a74463e,
+        ns1:Parameter-a7fcf1a3-2407-4f43-892b-3d52d9c8f720,
+        ns1:Parameter-b903c1bb-84d0-4008-b7a0-8e31dfe5065a,
+        ns1:Parameter-e008550a-76f8-4009-bc84-ee002bb51e31,
+        ns1:Parameter-ee6b27b3-6d46-4aff-a3f5-c19f3abbebfe,
+        ns1:Parameter-ef0dada9-8a09-4e58-a812-be2a5b8c8c9f,
+        ns1:Parameter-f99851df-2ec3-4993-9d22-175c61cecd3b ;
+    ns1:has_resource ns1:NOAA_NumericalData_GOES_12_MAG_PT0_512S ;
+    ns1:has_resource_header ns1:ResourceHeader-9ffc7a1c-0354-4c18-a889-f369467b68e1 ;
+    ns1:has_temporal_description ns1:TemporalDescription-e416d3e4-2127-4a3f-b205-504e65015d20 .
+
